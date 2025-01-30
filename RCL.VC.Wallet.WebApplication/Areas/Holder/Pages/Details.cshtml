@@ -1,0 +1,37 @@
+﻿@page
+@model RCL.VC.Wallet.WebApplication.Areas.Holder.Pages.DetailsModel
+@{
+    ViewData["Title"] = "Holder Profile";
+}
+
+<div class="card shadow rounded">
+    <div class="card-header">
+        <h3>@ViewData["Title"]</h3>
+    </div>
+    <div class="card-body">
+        @if (!string.IsNullOrEmpty(Model?.ErrorMessage))
+        {
+            <div class="alert alert-danger">
+                <p>ERROR: @Model.ErrorMessage</p>
+            </div>
+        }
+        else
+        {
+            <dl class="row">
+                <dt><strong>@Html.DisplayNameFor(model => model.Holder.name)</strong></dt>
+                <dd>@Html.DisplayFor(model => model.Holder.name)</dd>
+                <dt><strong>@Html.DisplayNameFor(model => model.Holder.username)</strong></dt>
+                <dd>@Html.DisplayFor(model => model.Holder.username)</dd>
+                <dt><strong>@Html.DisplayNameFor(model => model.Holder.countryCode)</strong></dt>
+                <dd>@Html.DisplayFor(model => model.Holder.countryCode)</dd>
+                <dt><strong>@Html.DisplayNameFor(model => model.Holder.region)</strong></dt>
+                <dd>@Html.DisplayFor(model => model.Holder.region)</dd>
+                <dt><strong>@Html.DisplayNameFor(model => model.Holder.status)</strong></dt>
+                <dd>@Html.DisplayFor(model => model.Holder.status)</dd>
+            </dl>
+        }
+    </div>
+    <div class="card-footer">
+        <a href="#" class="btn btn-primary">Edit <i class="bi bi-pencil"></i></a> <a href="#" class="btn btn-danger">Delete Account <i class="bi bi-trash"></i></a>
+    </div>
+</div>
