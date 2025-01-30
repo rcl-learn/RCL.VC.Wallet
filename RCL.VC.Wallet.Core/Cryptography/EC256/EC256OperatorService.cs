@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 
 namespace RCL.VC.Wallet.Core
 {
-    internal class EC256Operator : IEC256Operator
+    internal class EC256OperatorService : IEC256OperatorService
     {
         public Keys GenerateKeyPair()
         {

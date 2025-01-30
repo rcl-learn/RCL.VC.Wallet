@@ -6,13 +6,13 @@ using System.Text.Json;
 
 namespace RCL.VC.Wallet.Core
 {
-    public class DIDJWK : IDIDJWK
+    internal class DIDJwkService : IDIDJwkService
     {
-        public string CreateDID(ECJwk jwk)
+        public string CreateDID(ECJwk publicJwk)
         {
             try
             {
-                string jwkstr = JsonSerializer.Serialize(jwk);
+                string jwkstr = JsonSerializer.Serialize(publicJwk);
                 byte[] bytes = Encoding.UTF8.GetBytes(jwkstr);
                 jwkstr = Encoding.UTF8.GetString(bytes);
                 jwkstr = Base64UrlEncoder.Encode(jwkstr);

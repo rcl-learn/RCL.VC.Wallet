@@ -5,11 +5,11 @@ namespace RCL.VC.Wallet.Core.Test
     [TestClass]
     public class CryptographyTest
     {
-        private readonly IEC256Operator _ec256Operator;
+        private readonly IEC256OperatorService _ec256Operator;
 
         public CryptographyTest()
         {
-            _ec256Operator = (IEC256Operator)DependencyResolver.ServiceProvider().GetService(typeof(IEC256Operator));
+            _ec256Operator = (IEC256OperatorService)DependencyResolver.ServiceProvider().GetService(typeof(IEC256OperatorService));
         }
 
         [TestMethod]

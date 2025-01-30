@@ -2,9 +2,9 @@
 
 namespace RCL.VC.Wallet.Core
 {
-    public interface IDIDJWK
+    public interface IDIDJwkService
     {
-        public string CreateDID(ECJwk jwk);
+        public string CreateDID(ECJwk publicJwk);
         public DIDDocument GetDIDDocument(string didJwk);
     }
 }
